@@ -1,0 +1,77 @@
+CREATE TABLE CATEGORIA(
+IdCategoria int primary key identity(1,1),
+Descripcion varchar(50)
+)
+
+go
+
+CREATE TABLE PRODUCTO(
+IdProducto int primary key identity(1,1),
+CodigoBarra varchar(20),
+Descripcion varchar(50),
+Marca varchar(50),
+IdCategoria int,
+Precio decimal(10,2)
+CONSTRAINT FK_IDCATEGORIA FOREIGN KEY (IdCategoria) REFERENCES CATEGORIA(IdCategoria)
+)
+
+insert into CATEGORIA(Descripcion) values
+('Tecnologia'),
+('ElectroHogar'),
+('Accesorios')
+
+
+
+SELECT * FROM categoria
+
+
+insert into PRODUCTO(CodigoBarra,Descripcion,Marca,IdCategoria,Precio) values
+('50910010','Monitor Aoc  - Curvo  Gaming','AOC',4,1200),
+('50910011','secadora 21 KG WLA-21','LG',5,1749),
+('50910012','Lavadora 21 KG WLA-21','WINIA',5,1749),
+('50910013', 'Licuadora Multifunción', 'Oster', 5, 89.99),
+('50910014', 'Smartphone Galaxy S21', 'Samsung', 4, 899),
+('50910015', 'Laptop Envy 13', 'HP', 4, 1200),
+('50910016', 'Cámara EOS R5', 'Canon', 4, 3499),
+('50910017', 'Aire Acondicionado Inverter 18,000 BTU', 'LG', 5, 799.99),
+('50910018', 'Silla de Oficina Ergonómica', 'Herman Miller', 6, 899.50),
+('50910019', 'Parlante Bluetooth Charge 4', 'JBL', 4, 149),
+('50910020', 'Horno Eléctrico de Convección', 'Breville', 5, 329.99),
+('50910021', 'Impresora LaserJet Pro MFP', 'HP', 4, 399),
+('50910022', 'Smart TV QLED 65 pulgadas', 'Samsung', 4, 1699),
+('50910023', 'Silla Gaming Racing', 'DXRacer', 6, 299),
+('50910024', 'Refrigerador Side-by-Side', 'Whirlpool', 5, 1899),
+('50910025', 'Aspiradora Robot Roomba i7+', 'iRobot', 6, 799),
+('50910026', 'Consola PlayStation 5', 'Sony', 4, 499),
+('50910027', 'Teatro en Casa Dolby Atmos', 'Bose', 4, 999),
+('50910028', 'Tablet iPad Pro 12.9 pulgadas', 'Apple', 4, 1099),
+('50910029', 'Bicicleta de Montaña', 'Trek', 6, 1299.99),
+('50910030', 'Reloj Inteligente Galaxy Watch 4', 'Samsung', 4, 249),
+('50910031', 'Monitor Curvo Ultrawide', 'Dell', 4, 799),
+('50910032', 'Lavaplatos Empotrable', 'Bosch', 4, 899.50),
+('50910033', 'Sistema de Sonido Sonos Arc', 'Sonos', 4, 799),
+('50910034', 'Cámara de Seguridad Nest Cam', 'Google', 4, 199),
+('50910035', 'Scooter Eléctrico Xiaomi Mi Electric Scooter Pro 2', 'Xiaomi', 5, 549.99),
+('50910036', 'Horno de Microondas de Convección', 'Panasonic', 5, 249),
+('50910037', 'Altavoz Inteligente Echo Dot', 'Amazon', 4, 39.99),
+('50910038', 'Smartwatch Fitbit Sense', 'Fitbit', 4, 299),
+('50910039', 'Cafetera Express DeLonghi', 'DeLonghi', 6, 349.99),
+('50910040', 'Impresora Fotográfica HP Sprocket', 'HP', 4, 129),
+('50910041', 'Proyector 4K Epson Home Cinema', 'Epson', 4, 1499),
+('50910042', 'Silla de Comedor Moderna', 'CB2', 6, 199),
+('50910043', 'Auriculares Inalámbricos AirPods Pro', 'Apple', 6, 249),
+('50910044', 'Robot de Cocina Thermomix', 'Vorwerk', 6, 1399),
+('50910045', 'Barra de Sonido Sonos Beam', 'Sonos', 4, 399),
+('50910046', 'Portátil Gaming Alienware m15', 'Dell', 4, 2499),
+('50910047', 'Lavadora-Secadora Combo', 'LG', 5, 1599.50),
+('50910048', 'Consola Xbox Series X', 'Microsoft', 6, 499),
+('50910049', 'Smart TV OLED 55 pulgadas', 'LG', 4, 1499),
+('50910050', 'Sistema de Seguridad Ring Alarm', 'Ring', 4, 199),
+('50910051', 'Bicicleta Eléctrica Trek Verve+', 'Trek', 6, 2599.99),
+('50910052', 'Silla de Escritorio Ergonómica', 'Steelcase', 6, 599),
+('50910053', 'Cámara Mirrorless Sony Alpha a7 III', 'Sony', 4, 1999),
+('50910054', 'Refrigerador French Door', 'Samsung', 5, 2399.50),
+('50910055', 'Sistema de Sonido Bose SoundTouch 300', 'Bose', 4, 699);
+
+
+SELECT * FROM PRODUCTO
